@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html data-ng-app="projectsApp" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pany Koutsios</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/animate-ng.css">
+	<link rel="shortcut icon" type="image/png" href="favicon.ico">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/outdatedbrowser/outdatedBrowser.min.css"> 
+</head>
+<body>
+	<header>
+		<div id="wrapperHead">
+			<img src="images/professionalMe2facecircle.png" alt="Picture of me">
+			<h1 class="clickable"><a href="/portfolio/">Pany Koutsios</a></h1>
+			<nav>
+				<a href="https://www.linkedin.com/pub/pany-koutsios/78/778/24a" class="clickable linkedin"></a>
+				<a href="mailto:pkoutsios@hotmail.com?subject=After%20Viewing%20Your%20Portfolio" class="clickable email"></a>
+				<a href="https://twitter.com/PeeKay778" class="clickable twitter"></a>
+				<a href="https://github.com/Peekay777" class="clickable github"></a>
+			</nav>
+		</div>
+	</header>
+	
+	<div class="view-container">
+		<div class="animated view-frame" data-ng-view></div>
+	</div>
+	
+	<!-- outdated browser script and html -->
+	<div id="outdated">
+		<h6>Your browser is out-of-date!</h6>
+		<p>To view this website correctly, update your browser . <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now</a><button id="btnCloseUpdateBrowser" style="display:none;"></button></p>
+	</div>
+	<script src="resources/outdatedbrowser/outdatedBrowser.min.js"></script>
+	<script>
+		//event listener form DOM ready
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function() {
+					oldonload();
+					func();
+				}
+			}
+		}
+		//call function after DOM ready
+		addLoadEvent(
+			outdatedBrowser({
+				bgColor: '#f25648',
+				color: '#ffffff',
+				lowerThan: 'transform'
+			})
+		);
+	</script>
+	<!-- outdated browser END -->
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/directives.js"></script>
+</body>
+</html>
